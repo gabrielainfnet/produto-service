@@ -3,6 +3,7 @@ package com.ecommerce.produto.controller;
 import com.ecommerce.produto.model.Produto;
 import com.ecommerce.produto.service.ProdutoService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,11 +13,13 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/")
 @RequiredArgsConstructor
+@Slf4j
 public class ProdutoController {
     private final ProdutoService produtoService;
 
     @GetMapping
     public ResponseEntity<List<Produto>> findAll() {
+        log.info("Buscando todos os produtos");
         List<Produto> produtos = produtoService.findAll();
         if (produtos.isEmpty()) {
             return ResponseEntity.noContent().build();
