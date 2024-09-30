@@ -43,7 +43,7 @@ public class ProdutoServiceImpl implements ProdutoService {
             existingProduto.setNome(produto.getNome());
             existingProduto.setDescricao(produto.getDescricao());
             existingProduto.setPreco(produto.getPreco());
-            existingProduto.setQuantidade(produto.getQuantidade());
+            existingProduto.setQuantidadeDisponivel(produto.getQuantidadeDisponivel());
             return produtoRepository.save(existingProduto);
         } else {
             throw new RuntimeException("Produto com id " + id + " não encontrado");

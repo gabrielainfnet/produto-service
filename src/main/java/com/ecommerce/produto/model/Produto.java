@@ -21,5 +21,5 @@ public class Produto {
 
     private BigDecimal preco;
 
-    private int quantidade;
+    private int quantidadeDisponivel;
 }
